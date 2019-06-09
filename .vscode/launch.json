@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    
+
+
+
+
+      {
+          "name": "Launch index.html",
+          "type": "chrome",
+          "request": "launch",
+          "file": "ninagolodets/code/unit1/project1/index.html"
+      },
+  ]
+}
