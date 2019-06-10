@@ -10,44 +10,76 @@ var easyTimerHandle = null;
 picsInPlayEasy = [];
 
 //images for the game:
-var easyPicSelection = [
+var givenPairsEasy = [
   {
     letter: "a",
-    image: "img/im1.jpg"
+    image: "img/e11.jpg"
   },
   {
     letter: "b",
-    image: "img/im2.jpg"
+    image: "img/e12.jpg"
   },
   {
     letter: "c",
-    image: "img/im3.jpg"
+    image: "img/e13.jpg"
   },
   {
     letter: "d",
-    image: "img/im4.jpg"
+    image: "img/e14.jpg"
   },
   {
     letter: "e",
-    image: "img/im5.jpg"
+    image: "img/e21.jpg"
   },
   {
     letter: "f",
-    image: "img/im6.jpg"
+    image: "img/e22.jpg"
   },
   {
     letter: "g",
-    image: "img/im7.jpg"
+    image: "img/e23.jpg"
   },
   {
     letter: "h",
-    image: "img/im8.jpg"
+    image: "img/e24.jpg"
+  },
+  {
+    letter: "i",
+    image: "img/e31.jpg"
+  },
+  {
+    letter: "j",
+    image: "img/e32.jpg"
+  },
+  {
+    letter: "k",
+    image: "img/e33.jpg"
+  },
+  {
+    letter: "l",
+    image: "img/e34.jpg"
+  },
+  {
+    letter: "m",
+    image: "img/e41.jpg"
+  },
+  {
+    letter: "n",
+    image: "img/e42.jpg"
+  },
+  {
+    letter: "o",
+    image: "img/e43.jpg"
+  },
+  {
+    letter: "p",
+    image: "img/e44.jpg"
   }
 ];
-console.log(easyPicSelection);
+//console.log(easyPicSelection);
 
 //create an array holding pairs of images for the game:
-var givenPairsEasy = easyPicSelection.concat(easyPicSelection);
+//var givenPairsEasy = easyPicSelection.concat(easyPicSelection);
 console.log(givenPairsEasy);
 
 //shuffle the array
@@ -106,24 +138,6 @@ for (let id in currentBoardEasy) {
 }
 
 console.log("!!!",{currentBoardEasy});
-/*
-for (var i = 0; i < givenPairsEasy.length; i++) {
-  currentBoardEasy.forEach.call(givenPairsEasy, function(item) {
-    document.getElementById("gridboxeasy").appendChild(item);
-  });
-}
-*/
-
-/*
-function getImage (id) {
-  var cell = parseInt(id);
-  var filename = "img/im" + givenPairsEasy[cell-1] + ".jpg";
-  return filename;
-  console.log(filename);
-}
-console.log(getImage(3));
-*/
-
 
 var easyPicsGuessed = {
   e11: false,
@@ -153,7 +167,7 @@ var easyStartGameBttn;
 var easyPlayNewGameBttn;
 var gridBoxEasy;
 
-// Eventt Listeners
+// Event Listeners
 document.addEventListener("DOMContentLoaded", function(e) {
   console.log('LOADED!')
   easyTimerText = document.getElementById("easytimer");
@@ -177,156 +191,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
   gridBoxEasy.addEventListener("click", function(e) {
     if (!easyPicsGuessed[e.target.id] && !gameOver) {
       console.log(e.target.id + "clicked!");
-      //for (var i = 0; i < currentBoardEasy.length; i++) {
-        //e.target.src = "img/" + givenPairsEasy[i] + "jpg";
-        //e.target.src = "" + currentBoardEasy.image + "";
-        e.target.src = "img/" + e.target.id + ".jpg";
-        console.log(currentBoardEasy.image);
-        console.log(currentBoardEasy.id);
-        console.log(e.target.src);
+      console.log(e.target.id);
+      e.target.src = currentBoardEasy[e.target.id].image;
+      console.log(e.target.src);
+        
       
     }
-  });
+  }
+);
 });
-
-
-
-// getImage() has one input, the location of the cell that the user 
-// selected (an integer from 1 to 16), and returns the filename (an
-// absolute URL) for the image associated with this cell - it assumes 
-// that the images are stored in the following directory:
-// http://cs.wellesley.edu/~cs110/assignments/assignment6F12/images/
-// and have filenames "im1.jpg" ... "im8.jpg"
-
-// 
-
-      
-      //e.target.
-      
-      
-      //update the image:
-      //e.target.src = "img/cut-" + e.target.id + "-wire.png";
-      //mark it as cut
-      //wiresCut[e.target.id] = true;
-      //was it a correct wire? test to see if it's -1
-      //var wireIndex = wiresToCut.indexOf(e.target.id)
-      //if (wireIndex > -1) {
-        //correct
-        //console.log(e.target.id + " was correct");
-        //take out the wire out of wires to cut object
-        //wiresToCut.splice(wireIndex, 1);
-        //check for win will go here:
-        //if (checkForWin()) {
-          //endGame(true);
-        //}
-      //} else {
-        //incorrect
-        //console.log(e.target.id + " was incorrect");
-        //start the 750ms delay
-        //delayHandle = setTimeout(function() {
-          //end the game with a LOSS function
-          //console.log("Bang!");
-          //endGame(false);
-        //}, 750);
-      //}
-    //} 
-
-    /*
-    gridBox.addEventListener('click', function(e){
-      if (!boxClicked[e.target.id] && !gameOver) {
-        console.log(e.target.id + " Clicked");
-        e.target.textContent = x;
-        //e.target.src = "img/doggy.jpg";
-        if (currentPlayer === 1) {
-          e.target.textContent = x;
-          //e.target.classList.add(x);
-          currentBoard[e.target.id] = x;
-          currentBoard[e.target.src] = "img/doggy.jpg";
-          console.log(e.target.classList);
-          currentPlayer++;
-        } else {
-          e.target.textContent = o;
-          //e.target.classList.add(o);
-          currentBoard[e.target.id] = o;
-          currentBoard[e.target.src] = "img/kitty.jpg";
-          currentPlayer--;
-        }
-      checkWin();
-      }
-    })
-    */
-
-/*
-var picsInPlayEasy = [];
-let picIdEasy;
-var winEasy = 0;
-
-function checkForMatch() {
-	var item = document.getElementById("gridboxeasy");
-	item.setAttribute('src', givenPairsEasy[picId].image);
-
-	if (picsInPlay[0] === picsInPlay[1]) {
-		console.log("You found a match!");
-		//document.getElementById("easywincounter").innerHTML = win + 1;
-	} else {
-		console.log("Sorry, try again.");
-    //document.getElementById('span1').innerHTML = win;
-	} 
-};
-function flipPic() {
-	picId = this.getAttribute('data-id');
-	picsInPlay.push(givenPairsEasy[picId].letter);
-	this.setAttribute('src', givenPairsEasy[picId].image);
-
-	if (picsInPlay.length === 2) {
-		checkForMatch();
-	}
-
-	console.log("flipped"  + givenPairsEasy[picId].letter);
-};
-
-function createBoard() {
-	for (var i = 0; i < givenPairsEasy.length; i++) {
-		var picElement = document.createElement('img');
-		picElement.setAttribute('src', 'img/back.jpg');
-		picElement.setAttribute('data-id', i);
-		picElement.addEventListener('click', flipPic);
-		document.getElementById('gridboxeasy').appendChild(picElement);
-	}
-};
-
-createBoard();
-*/
-
-
-/*
-function createBoard() {
-  var gridBoxEasy = document.getElementById("gridboxeasy");
-  var gridEasy = document.createElement("section");
-  gridEasy.setAttribute("class", "grid");
-  gridBoxEasy.appendChild(gridEasy);
-
-  givenPairsEasy.forEach(item => {
-  var card = document.createElement("div");
-  card.classList.add("card");
-  card.dataset.name = item.name;
-  card.style.backgroundImage = "url(img/back.jpg)";
-  gridEasy.appendChild(card);
-})
-*/
-  
-  /*
-  for (var i = 0; i < givenPairsEasy.length; i++) {
-    var cardElement = document.createElement('img');
-    cardElement.setAttribute('src', 'img/back.jpg');
-    cardElement.setAttribute('data-id', i);
-		//cardElement.addEventListener('click', flipCard);
-		document.getElementById("gridboxeasy").appendChild(cardElement);
-	}
-};
-*/
-
-
-
-
-
