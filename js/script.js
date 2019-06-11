@@ -4,76 +4,93 @@ var easyWin = 0;
 var easyLoss = 0;
 var gameOver = false;
 var easyRemainingTime = 0;
+var delayHandle;
 //var easyDelayHandle = null;
 var easyTimerHandle = null;
 //var picsFlipped = 0;
-picsInPlayEasy = [];
+//picsInPlayEasy = [];
 
 //images for the game:
 var givenPairsEasy = [
   {
     letter: "a",
-    image: "img/e11.jpg"
+    image: "img/e11.jpg",
+    imageback: "img/back.jpg"
   },
   {
     letter: "b",
-    image: "img/e12.jpg"
+    image: "img/e12.jpg",
+    imageback: "img/back.jpg"
   },
   {
     letter: "c",
-    image: "img/e13.jpg"
+    image: "img/e13.jpg",
+    imageback: "img/back.jpg"
   },
   {
     letter: "d",
-    image: "img/e14.jpg"
+    image: "img/e14.jpg",
+    imageback: "img/back.jpg"
   },
   {
     letter: "e",
-    image: "img/e21.jpg"
+    image: "img/e21.jpg",
+    imageback: "img/back.jpg"
   },
   {
     letter: "f",
-    image: "img/e22.jpg"
+    image: "img/e22.jpg",
+    imageback: "img/back.jpg"
   },
   {
     letter: "g",
-    image: "img/e23.jpg"
+    image: "img/e23.jpg",
+    imageback: "img/back.jpg"
   },
   {
     letter: "h",
-    image: "img/e24.jpg"
+    image: "img/e24.jpg",
+    imageback: "img/back.jpg"
   },
   {
-    letter: "i",
-    image: "img/e31.jpg"
+    letter: "a",
+    image: "img/e31.jpg",
+    imageback: "img/back.jpg"
   },
   {
-    letter: "j",
-    image: "img/e32.jpg"
+    letter: "b",
+    image: "img/e32.jpg",
+    imageback: "img/back.jpg"
   },
   {
-    letter: "k",
-    image: "img/e33.jpg"
+    letter: "c",
+    image: "img/e33.jpg",
+    imageback: "img/back.jpg"
   },
   {
-    letter: "l",
-    image: "img/e34.jpg"
+    letter: "d",
+    image: "img/e34.jpg",
+    imageback: "img/back.jpg"
   },
   {
-    letter: "m",
-    image: "img/e41.jpg"
+    letter: "e",
+    image: "img/e41.jpg",
+    imageback: "img/back.jpg"
   },
   {
-    letter: "n",
-    image: "img/e42.jpg"
+    letter: "f",
+    image: "img/e42.jpg",
+    imageback: "img/back.jpg"
   },
   {
-    letter: "o",
-    image: "img/e43.jpg"
+    letter: "g",
+    image: "img/e43.jpg",
+    imageback: "img/back.jpg"
   },
   {
-    letter: "p",
-    image: "img/e44.jpg"
+    letter: "h",
+    image: "img/e44.jpg",
+    imageback: "img/back.jpg"
   }
 ];
 //console.log(easyPicSelection);
@@ -97,23 +114,6 @@ function shuffle(array) {
 }
 shuffle(givenPairsEasy);
 
-// var currentBoardEasy = new Object();
-// currentBoardEasy["e11"] = '-';
-// currentBoardEasy["e12"] = '-';
-// currentBoardEasy["e13"] = '-';
-// currentBoardEasy["e14"] = '-';
-// currentBoardEasy["e21"] = '-';
-// currentBoardEasy["e22"] = '-';
-// currentBoardEasy["e23"] = '-';
-// currentBoardEasy["e24"] = '-';
-// currentBoardEasy["e31"] = '-';
-// currentBoardEasy["e32"] = '-';
-// currentBoardEasy["e33"] = '-';
-// currentBoardEasy["e34"] = '-';
-// currentBoardEasy["e41"] = '-';
-// currentBoardEasy["e42"] = '-';
-// currentBoardEasy["e43"] = '-';
-// currentBoardEasy["e44"] = '-';
 var currentBoardEasy = {
   e11: null,
   e12: null,
@@ -159,6 +159,13 @@ var easyPicsGuessed = {
 }
 
 var openedPicsEasy =[];
+var guessedPicsEasy = [];
+var notGuessedPicsEasy = [];
+//var openedPicsEasyObj = {};
+//var guessedPicsEasy = [];
+var picIdEasy;
+var count = 0;
+var picsOpened = 0;
 
 //DOM References:
 var easyTimerText;
@@ -191,12 +198,52 @@ document.addEventListener("DOMContentLoaded", function(e) {
   gridBoxEasy.addEventListener("click", function(e) {
     if (!easyPicsGuessed[e.target.id] && !gameOver) {
       console.log(e.target.id + "clicked!");
-      console.log(e.target.id);
       e.target.src = currentBoardEasy[e.target.id].image;
       console.log(e.target.src);
-        
+      openedPicsEasy.push(e.target.id);
       
+      if (openedPicsEasy.length === 2 && currentBoardEasy[openedPicsEasy[0]].letter === currentBoardEasy[openedPicsEasy[1]].letter) { //openedPicsEasy[0] === openedPicsEasy[1]) {
+        console.log("found a match!");
+  
+        guessedPicsEasy.push(openedPicsEasy);
+        openedPicsEasy = [];
+        
+        
+        console.log("guessed pics: " + openedPicsEasy);
+          //openedPicsEasy.push(currentBoardEasy[e.target.id].letter);
+          //if (guessedPicsEasy.length === currentBoardEasy.length) {
+          //}
+          //gridBoxEasy.classList.add("match");
+          //openedPicsEasy = [];
+        console.log("opened pics are: " + openedPicsEasy);
+        console.log("guessed pics are: " + guessedPicsEasy);
+          //console.log("opened pics " + openedPicsEasy.length);
+
+      } else if (openedPicsEasy.length === 2 && currentBoardEasy[openedPicsEasy[0]].letter !== currentBoardEasy[openedPicsEasy[1]].letter) {
+          //unmatched
+          console.log("no match!")
+          console.log("My array", currentBoardEasy);
+          console.log("Opened array", openedPicsEasy);
+          // openedPicsEasy.pop(currentBoardEasy[e.target.id].letter);
+          // openedPicsEasy.pop(currentBoardEasy[e.target.id].letter);
+
+          
+          delayHandle = setTimeout(function() {
+            // e.target.src = currentBoardEasy[e.target.id].imageback;
+            document.getElementById(openedPicsEasy[0]).src = currentBoardEasy[openedPicsEasy[0]].imageback;
+            document.getElementById(openedPicsEasy[1]).src = currentBoardEasy[openedPicsEasy[1]].imageback;
+            
+            openedPicsEasy.length = 0;
+          }, 700);
+          
+          console.log("now opened pics are:" + openedPicsEasy);
+          console.log("guessed pics are: " + guessedPicsEasy);
+          
+          // openedPicsEasy = [];
+          //e.target.src = currentBoardEasy[e.target.id].imageback;
+      }
+        
     }
-  }
-);
+  });
 });
+      
