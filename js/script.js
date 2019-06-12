@@ -163,6 +163,8 @@ var easyPicsGuessed = {
 
 var openedPicsEasy =[];
 var guessedPicsEasy = [];
+var guessesLength = 0;
+var unpairedGuesses = [];
 //var notGuessedPicsEasy = [];
 //var openedPicsEasyObj = {};
 //var guessedPicsEasy = [];
@@ -220,7 +222,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
           //openedPicsEasy = [];
         console.log("opened pics are: " + openedPicsEasy);
         console.log("guessed pics are: " + guessedPicsEasy);
+
         //checkWin();
+
+        unpairedGuesses = guessedPicsEasy.concat(guessedPicsEasy);
+        guessesLength = unpairedGuesses.length;
+        console.log("guessed pics length in match is: " + guessesLength);
+
+        
 
       } else if (openedPicsEasy.length === 2 && currentBoardEasy[openedPicsEasy[0]].letter !== currentBoardEasy[openedPicsEasy[1]].letter) {
           //unmatched
@@ -239,70 +248,51 @@ document.addEventListener("DOMContentLoaded", function(e) {
           
           console.log("now opened pics are:" + openedPicsEasy);
           console.log("guessed pics are: " + guessedPicsEasy);
+
+          console.log("guessed pics length in NO match is: " + guessesLength);
+
           //checkWin();
-          
+           
           // openedPicsEasy = [];
           //e.target.src = currentBoardEasy[e.target.id].imageback;
       }
-      //checkWin();
+      
       //if (guessedPicsEasy.length === 16 && easyRemainingTime !== 0) {
        
+      //guessedPicsEasy = guessedPicsEasy.concat(guessedPicsEasy);
+      //guessesLength = guessedPicsEasy.length;
+      
       if (checkWin()) {
           endGame(true);
-        } 
-      //}
-       //checkWin();
-
-       
-        
+      } 
     }
+    
+    //console.log("the guessed length in event listener is: " + guessedPicsEasy.guessesLength);
   });
 });
 
-/*
-function checkWin() {
-  gameOver = false;
-  //return guessedPicsEasy.length;
-  //return easyRemainingTime;
-  if (guessedPicsEasy.length === 16) {
-    gameOver = true;
-    clearInterval(timerHandle);
-    clearTimeout(delayHandle);
-    console.log("checkWin() says: You won!");
-    easyWin++;
-    document.getElementById("easywincounter").textContent = easyWin;
-    document.getElementById("easygamemessage").textContent = "Congratulations! You won!";
-    
-    //break;
-  } else if (guessedPicsEasy.length !== 16) {
-    gameOver = true;
-    clearInterval(timerHandle);
-    clearTimeout(delayHandle);
-    console.log(" checkWin() says: You lost, try again...");
-    easyLoss++;
-    document.getElementById("easylosscounter").textContent = easyLoss;
-    document.getElementById("easygamemessage").textContent = "Sorry... Please try again."
-  }
+
   
-}
-*/
 
 
 function checkWin() {
-  gameOver = false;
-  if (guessedPicsEasy.length === 16) {
-    clearInterval(timerHandle);
-    clearTimeout(delayHandle);
+  //gameOver = false;
+  //console.log("guessed pics length checkWin is: " + guessedPicsEasy.length);
+  if (guessesLength === 16) {
+    console.log("checkWin()'s the guessed length is: " + guessesLength);
+    //clearInterval(timerHandle);
+    //clearTimeout(delayHandle);
     console.log("checkWin() says: You won!");
+    return true;
     //easyWin++;
     //document.getElementById("easywincounter").textContent = easyWin;
     //document.getElementById("easygamemessage").textContent = "Congratulations! You won!";
 
-  } 
-  else if (easyRemainingTime === 0) {
-    clearInterval(timerHandle);
-    clearTimeout(delayHandle);
-    console.log(" checkWin() says: You lost, try again...");
+  } else if (easyRemainingTime === 0) {
+    //clearInterval(timerHandle);
+    //clearTimeout(delayHandle);
+    console.log("checkWin() says: You lost, try again...");
+    return false;
     //easyLoss++;
     //document.getElementById("easylosscounter").textContent = easyLoss;
     //document.getElementById("easygamemessage").textContent = "Sorry... Please try again."
@@ -310,30 +300,10 @@ function checkWin() {
 
 }
 
-  /*gameOver = false;
-  if (guessedPicsEasy.length === 16 && easyRemainingTime !== 0) {
-    //gameOver = true;
-    //document.getElementById("easygamemessage").textContent = "Congratulations! You won!";
-    console.log("checkWin says: You won!");
-    //easyWin++;
-    document.getElementById("easywincounter").textContent = easyWin;
- 
-  } else if (guessedPicsEasy.length < 16 && easyRemainingTime === 0) {
-    //gameOver = true;
-    console.log("checkWin() says: you lost");
-    //document.getElementById("easygamemessage").textContent = "Sorry... Please try again."
-    //easyLoss++;
-    document.getElementById("easylosscounter").textContent = easyLoss;
-  }
-  */
-//}
-
-
-
 function endGame(win) {
   //if game ends, clear the timers
-  clearTimeout(delayHandle);
   clearInterval(timerHandle);
+  clearTimeout(delayHandle);
   //change game state to over:
   gameOver = true;
   //enable reset button
@@ -348,17 +318,14 @@ function endGame(win) {
     //change timer colors
     //timerText.classList.remove("red");
     //timerText.classList.add("green");
+
   } else {
     //loss condition
     console.log("endGame says: You lost, try again...");
     easyLoss++;
     document.getElementById("easylosscounter").textContent = easyLoss;
-    document.getElementById("easygamemessage").textContent = "Sorry... Please try again."
-    //easyLoss++;
-    //document.getElementById("easylosscounter").textContent = easyLoss;
-    //document.getElementById("easygamemessage").textContent = "Sorry... Please try again."
+    document.getElementById("easygamemessage").textContent = "Sorry... Please try again.";
 
- 
     //change background pic
     //document.body.classList.remove("unexploaded");
     //document.body.classList.add("exploaded");
@@ -370,13 +337,11 @@ function updateClock() {
   easyRemainingTime--;
   if (easyRemainingTime <= 0) {
     endGame(false);
-    //timeLeft = easyRemainingTime;
   }
   document.getElementById("easytimer").textContent = easyRemainingTime;
 }
 
 function initGame() {
-  //wiresToCut.length = 0; //empty out the array from a previous game
   easyRemainingTime = EASY_STARTING_TIME;
   easyTimerText.textContent = easyRemainingTime;
   document.getElementById('easygamemessage').textContent = '';
