@@ -8,6 +8,11 @@ body, html {
   background-size: cover;
   background-attachment: fixed;
 }
+#easybackground {
+  background-image: url("https://www.washingtonpost.com/resizer/LaN2To2gnlQW-XkqMODPZanrZVk=/957x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/QH2XL2QWVZEJND5Z6OSSQXYZJM.PNG");
+  background-size: cover;
+  background-attachment: fixed;
+}
 #title {
   font-family: 'Lobster', cursive;
 }
@@ -19,10 +24,19 @@ body, html {
   border-radius: 15px;
 }
 #easylevel, #hardlevel, #mediumlevel {
-  font-family: 'Lobster', cursive;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  opacity: 0.5;
 }
 h2 {
   font-family: 'Lobster', cursive;
+}
+h3, p {
+  background-color: rgba(211, 209, 182, 0.5);
+  border-radius: 15px;
+  width: 41%;
+  margin-left: auto;
+  margin-right: auto;
 }
 a {
   text-decoration-color: none;
@@ -30,7 +44,7 @@ a {
   color: black;
   display: inline-block;
   border: 1px solid black;
-  margin: 5px;
+  margin: 10px;
   padding: 5px;
   border-radius: 10px;
   background-color: rgba(211, 209, 182, 0.5);
@@ -42,12 +56,16 @@ button {
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
-  font-size: 30px;
+  font-size: 20px;
   border: 0.5px solid black;
+}
+img {
+  height: 175px;
+  width: 175px;
 }
 #easystartgame, #mediumstartgame, #hardstartgame {
   background-color: rgba(150, 196, 60, 0.5);
-  border-radius: 10px 10px 0 0;
+  border-radius: 0 0 10px 10px;
   width: 250px;
 }
 #easyplaynewgame, #mediumplaynewgame, #hardplaynewgame {
@@ -55,12 +73,39 @@ button {
   border-radius: 0 0 10px 10px;
   width: 250px;
 }
+#scores {
+  font-size: 25px;
+  display: inline;
+}
+
+/*#easygrid {
+  display: grid;
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "scores gridboxeasy gameoptions";
+}
+#scores {
+  grid-area: scores;
+}
 #gridboxeasy {
+  grid-area: gridboxeasy;
+}
+#gameoptions {
+  grid-area: gameoptions;
+}
+*/
+#gridboxeasy {
+  background-color:  rgba(211, 209, 182, 0.5);
+  margin-left: 450px;
+  margin-right: 450px;
+  border-radius: 15px;
+  padding: 20px;
   display: grid;
   justify-content: center;
-  grid-gap: 4px;
-  grid-template-rows: 200px 200px 200px 200px;
-  grid-template-columns: 200px 200px 200px 200px;
+  grid-gap: 20px;
+  grid-template-rows: 175px 175px 175px 175px;
+  grid-template-columns: 175px 175px 175px 175px;
   grid-template-areas:
     "e11 e12 e13 e14"
     "e21 e22 e23 e24"
@@ -69,69 +114,82 @@ button {
 }
 #e11 {
   grid-area: e11;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e12 {
   grid-area: e12;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e13 {
   grid-area: e13;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e14 {
   grid-area: e14;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e21 {
   grid-area: e21;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e22 {
   grid-area: e22;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e23 {
   grid-area: e23;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e24 {
   grid-area: e24;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e31 {
   grid-area: e31;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e32 {
   grid-area: e32;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e33 {
   grid-area: e33;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e34 {
   grid-area: e34;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e41 {
   grid-area: e41;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e42 {
   grid-area: e42;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e43 {
   grid-area: e43;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 #e44 {
   grid-area: e44;
-  border: 2px solid black;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
 }
 
-.match {
-  background-color: rgba(255, 255, 255, 0.5);
-}

@@ -4,93 +4,96 @@ var easyWin = 0;
 var easyLoss = 0;
 var gameOver = false;
 var easyRemainingTime = 0;
-var timeLeft = 0;
+//var timeLeft = 0;
 var delayHandle = null;
 var timerHandle = null;
 
 //images for the game:
+var givenPairsEasy;
+/*
 var givenPairsEasy = [
   {
     letter: "a",
     image: "img/e11.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "b",
     image: "img/e12.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "c",
     image: "img/e13.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "d",
     image: "img/e14.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "e",
     image: "img/e21.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "f",
     image: "img/e22.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "g",
     image: "img/e23.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "h",
     image: "img/e24.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "a",
     image: "img/e31.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "b",
     image: "img/e32.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "c",
     image: "img/e33.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "d",
     image: "img/e34.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "e",
     image: "img/e41.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "f",
     image: "img/e42.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "g",
     image: "img/e43.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   },
   {
     letter: "h",
     image: "img/e44.jpg",
-    imageback: "img/back.jpg"
+    imageback: "img/paw.png"
   }
 ];
+*/
 
 //shuffle the array
 //Fisher-Yates (aka Knuth) Shuffle from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -105,7 +108,7 @@ function shuffle(array) {
   }
   return array;
 }
-shuffle(givenPairsEasy);
+//shuffle(givenPairsEasy);
 
 var currentBoardEasy = {
   e11: null,
@@ -126,9 +129,11 @@ var currentBoardEasy = {
   e44: null,
 }
 
+/*
 for (let id in currentBoardEasy) {
   currentBoardEasy[id] = givenPairsEasy.pop();
 }
+*/
 
 console.log("!!!",{currentBoardEasy});
 
@@ -183,11 +188,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
     startGame();
   });
   easyPlayNewGameBttn.addEventListener("click", function(e) {
-    console.log("clicked play new game");
-    resetScores();
+    //console.log("clicked play new game");
+    reset();
   });
   gridBoxEasy.addEventListener("click", function(e) {
-    console.log("im clicking");
+    //console.log("im clicking");
     if (!easyPicsGuessed[e.target.id] && !gameOver) {
       console.log(e.target.id + "clicked!");
       e.target.src = currentBoardEasy[e.target.id].image;
@@ -288,10 +293,92 @@ function startGame() {
   document.getElementById('easygamemessage').textContent = '';
   openedPicsEasy.length = 0;
   guessedPicsEasy.length = 0;
+
+  givenPairsEasy = [
+    {
+      letter: "a",
+      image: "img/e11.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "b",
+      image: "img/e12.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "c",
+      image: "img/e13.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "d",
+      image: "img/e14.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "e",
+      image: "img/e21.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "f",
+      image: "img/e22.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "g",
+      image: "img/e23.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "h",
+      image: "img/e24.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "a",
+      image: "img/e31.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "b",
+      image: "img/e32.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "c",
+      image: "img/e33.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "d",
+      image: "img/e34.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "e",
+      image: "img/e41.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "f",
+      image: "img/e42.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "g",
+      image: "img/e43.jpg",
+      imageback: "img/paw.png"
+    },
+    {
+      letter: "h",
+      image: "img/e44.jpg",
+      imageback: "img/paw.png"
+    }
+  ];
   
-  //shuffle(givenPairsEasy);
+  shuffle(givenPairsEasy);
   
-  /*
   for (let elem1 in currentBoardEasy) {
     currentBoardEasy[elem1] = null;
   }
@@ -303,33 +390,25 @@ function startGame() {
   
   for (let elem2 in easyPicsGuessed) {
     easyPicsGuessed[elem2] = false;
-    */
-  //}
+  }
   
   var picImages = gridBoxEasy.children; //picks up every element in the grid box
   for (let i = 0; i < picImages.length; i++) { // show back of each pic
-    picImages[i].src = "img/back.jpg";
-  }
+    picImages[i].src = "img/paw.png";
+  } 
 }
 
-function resetScores() {
+function reset() {
   //console.log("what is gameOver", gameOver)
   gameOver = false;
-  startGame();
   easyWin = 0;
   easyLoss = 0;
-  //easyRemainingTime = 10;
-
+  
   document.getElementById("easywincounter").textContent = easyWin;
   document.getElementById("easylosscounter").textContent = easyLoss;
-  //clearTimeout(delayHandle);
-  //clearInterval(timerHandle);
-
-  //easyRemainingTime = EASY_STARTING_TIME;
-  document.getElementById("easytimer").textContent = easyRemainingTime;
-  document.getElementById('easygamemessage').textContent = '';
-  //openedPicsEasy.length = 0;
-  //guessedPicsEasy.length = 0;
+  clearTimeout(delayHandle);
+  clearInterval(timerHandle);
   
+  startGame();  
 }
       
