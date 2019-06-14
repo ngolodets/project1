@@ -75,11 +75,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 function checkWinEasy() {
   //console.log("guessed pics length checkWin is: " + guessedPicsEasy.length);
   if (guessesLength === 16) {
-    console.log("checkWin()'s the guessed length is: " + guessesLength);
-    console.log("checkWin() says: You won!");
+    //console.log("checkWin()'s the guessed length is: " + guessesLength);
+    //console.log("checkWin() says: You won!");
     return true;
   } else if (easyRemainingTime === 0) {
-    console.log("checkWin() says: You lost, try again...");
+    //console.log("checkWin() says: You lost, try again...");
     return false;
   }
 }
