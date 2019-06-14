@@ -2,11 +2,10 @@
 const EASY_STARTING_TIME = 60;
 var easyWin = 0;
 var easyLoss = 0;
-var easyRemainingTime = 0;
 var delayHandle = null;
 var timerHandle = null;
+var easyRemainingTime = 0;
 var gameOver = false;
-
 /*
 const HARD_STARTING_TIME = 300;
 var hardWin = 0;
