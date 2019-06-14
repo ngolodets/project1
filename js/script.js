@@ -1,70 +1,52 @@
-//shuffle the array
-//Fisher-Yates (aka Knuth) Shuffle from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
-  while (0 !== currentIndex) { // While there remain elements to shuffle...
+  while (0 !== currentIndex) {                               // While there remain elements to shuffle...
     randomIndex = Math.floor(Math.random() * currentIndex);  // Pick a remaining element...
     currentIndex -= 1;
-    temporaryValue = array[currentIndex];  // And swap it with the current element.
+    temporaryValue = array[currentIndex];                    // And swap it with the current element.
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
   return array;
 }
 
-// Event Listeners
+// Event Listeners:
 document.addEventListener("DOMContentLoaded", function(e) {
-  console.log('LOADED!')
   easyTimerText = document.getElementById("easytimer");
   easyGameMessage = document.getElementById("easygamemessage");
   easyStartGameBttn = document.getElementById("easystartgame");
   easyPlayNewGameBttn = document.getElementById("easyplaynewgame");
   gridBoxEasy = document.getElementById("gridboxeasy");
   
-  // Click handlers
+  // Click handlers:
   easyStartGameBttn.addEventListener("click", function(e) {
-    //console.log("clicked start game");
     timerHandle = setInterval(updateClockEasy, 1000);
     startGameEasy();
   });
   
   easyPlayNewGameBttn.addEventListener("click", function(e) {
-    //console.log("clicked play new game");
     resetEasy();
   });
   
   gridBoxEasy.addEventListener("click", function(e) {
-    //console.log("im clicking");
     if (!easyPicsGuessed[e.target.id] && !gameOver) {
-      console.log(e.target.id + "clicked!");
       e.target.src = currentBoardEasy[e.target.id].image;
-      console.log(e.target.src);
       openedPicsEasy.push(e.target.id);
-      
-      if (openedPicsEasy.length === 2 && currentBoardEasy[openedPicsEasy[0]].letter === currentBoardEasy[openedPicsEasy[1]].letter) { //openedPicsEasy[0] === openedPicsEasy[1]) {
-        //matched logic:
-        //push the guessed pictures into a separate array to compare for the win/loss condition
-        guessedPicsEasy.push(openedPicsEasy);
-        //reset the number of pics opened:
-        openedPicsEasy = [];
-        
-        //ensure that we have guessed all the pics on the board:
-        unpairedGuesses = guessedPicsEasy.concat(guessedPicsEasy);
-        guessesLength = unpairedGuesses.length;
-        //console.log("guessed pics length in match is: " + guessesLength);   
-        
+      //matched logic:
+      if (openedPicsEasy.length === 2 && currentBoardEasy[openedPicsEasy[0]].letter === currentBoardEasy[openedPicsEasy[1]].letter) { 
+        guessedPicsEasy.push(openedPicsEasy);                        //push the guessed pictures into a separate array to compare for the win/loss condition
+        openedPicsEasy = [];                                         //reset the number of pics opened                                                            
+        unpairedGuesses = guessedPicsEasy.concat(guessedPicsEasy);   //ensure that we have guessed all the pics on the board
+        guessesLength = unpairedGuesses.length;  
+      //unmatched logic:
       } else if (openedPicsEasy.length === 2 && currentBoardEasy[openedPicsEasy[0]].letter !== currentBoardEasy[openedPicsEasy[1]].letter) {
-        //unmatched logic:
-        //Delay for turning the unmatched pics over:
-        delayHandle = setTimeout(function() {
-          // e.target.src = currentBoardEasy[e.target.id].imageback;
+        delayHandle = setTimeout(function() {                        //Delay for turning the unmatched pics over
           document.getElementById(openedPicsEasy[0]).src = currentBoardEasy[openedPicsEasy[0]].imageback;
           document.getElementById(openedPicsEasy[1]).src = currentBoardEasy[openedPicsEasy[1]].imageback;
-          //reset the value of pics opened:
-          openedPicsEasy.length = 0;
+          openedPicsEasy.length = 0;                                  //reset the value of pics opened
         }, 700);
       }
-      
       if (checkWinEasy()) {
         endGameEasy(true);
       } 
@@ -73,34 +55,23 @@ document.addEventListener("DOMContentLoaded", function(e) {
 });
 
 function checkWinEasy() {
-  //console.log("guessed pics length checkWin is: " + guessedPicsEasy.length);
   if (guessesLength === 16) {
-    //console.log("checkWin()'s the guessed length is: " + guessesLength);
-    //console.log("checkWin() says: You won!");
     return true;
   } else if (easyRemainingTime === 0) {
-    //console.log("checkWin() says: You lost, try again...");
     return false;
   }
 }
 
 function endGameEasy(win) {
-  //if game ends, clear the timers
-  clearInterval(timerHandle);
+  clearInterval(timerHandle);     //if game ends, clear the timers
   clearTimeout(delayHandle);
-  //change game state to over:
-  gameOver = true;
-  
-  if (win) {
-    //win condition
-    console.log("endGame says: You won!");
+  gameOver = true;                //change game state to over
+  if (win) {                      //win condition
     easyWin++;
     document.getElementById("easywincounter").textContent = easyWin;
     document.getElementById("easygamemessage").textContent = "Congratulations! You won!";
     document.getElementById("easygamemessage").style.backgroundColor = "rgba(150, 196, 60, 0.5)";
-  } else {
-    //loss condition
-    console.log("endGame says: You lost, try again...");
+  } else {                        //loss condition
     easyLoss++;
     document.getElementById("easylosscounter").textContent = easyLoss;
     document.getElementById("easygamemessage").textContent = "Sorry... Please try again.";
@@ -222,14 +193,13 @@ function startGameEasy() {
     easyPicsGuessed[elem2] = false;
   }
   
-  var picImages = gridBoxEasy.children; //picks up every element in the grid box
-  for (let i = 0; i < picImages.length; i++) { // show back of each pic
+  var picImages = gridBoxEasy.children;           //picks up every element in the grid box
+  for (let i = 0; i < picImages.length; i++) {    // show back of each pic
     picImages[i].src = "img/paw.png";
   } 
 }
 
 function resetEasy() {
-  //console.log("what is gameOver", gameOver)
   gameOver = false;
   easyWin = 0;
   easyLoss = 0;
