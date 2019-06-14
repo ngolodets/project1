@@ -17,10 +17,10 @@ Additionally, there are two buttons -- one to start a new game and the other to 
 Moreover, there is a link at the bottom of the game page that takes the user to the home page, where game instructions are presented.
 
 The screen shot of the main page is:
-![image](img/mainpage.jpg)
+![image](img/mainpage.png)
 
 The screen shot of the game page is:
-![image](img/gamepage.jpg)]
+![image](img/gamepage.png)]
 
 ## Development journal:
 At the beginning of the project, my main concern consisted of figuring out a way to randomize the pairs of pictures.  For that purpose, I used Fisher-Yates (or Knuth) Shuffle that I found on stackoverflow.
