@@ -1,6 +1,8 @@
 # project1 -- Memory Game
 The aim of the memory game is to match all the pairs of pictures on the board within a given interval of time.  If the player matches all the tiles/pictures, they win.  If the player runs out of time and does not uncover all the tiles on the board, they loose.
 
+Play online: [link]()
+
 ## Technologies used:
 This game was created using HTML, CSS and JavaScript.
 
