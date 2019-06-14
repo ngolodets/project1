@@ -1,7 +1,7 @@
 # project1 -- Memory Game
 The aim of the memory game is to match all the pairs of pictures on the board within a given interval of time.  If the player matches all the tiles/pictures, they win.  If the player runs out of time and does not uncover all the tiles on the board, they loose.
 
-Play online: [link]()
+Play online: []( https://ngolodets.github.io/project1/.)
 
 ## Technologies used:
 This game was created using HTML, CSS and JavaScript.
@@ -18,7 +18,7 @@ Moreover, there is a link at the bottom of the game page that takes the user to 
 
 ## Development journal:
 At the beginning of the project, my main concern consisted of figuring out a way to randomize the pairs of pictures.  For that purpose, I used Fisher-Yates (or Knuth) Shuffle that I found on stackoverflow.
-[link](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
+[stackoverflow link](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 
 Once my pairs of pictures were randomizing properly, I used pop() method to populate my gameboard.  I've added an event listener to my grid, so each time two of the tiles are selected, they are analyzed for match.  For this purpose, I've assigned a letter to each image in my given pictures array to make the comparison -- if the letters match, the images match.  I then used push() method to populate the "guessed" images array with these letters, which I used for my check win condition.  The matched images stay uncovered on the board.  
 
