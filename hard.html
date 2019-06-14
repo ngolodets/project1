@@ -5,67 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="js/script.js"></script>
   <title>Memory Game: Hard</title>
 </head>
 <body>
-    <h1 id="hardlevel">Memory Game: Hard</h1>
-    <h3>You have <span id="hardtimer"></span> left to guess...</h3>
-    <h1 id="hardgamemessage"></h1>
-    <div id="gridboxhard">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div>
-      <p class="level">Wins: <span id="hardwincounter">0</span></p>
-      <p class="level">Losses: <span id="hardlosscounter">0</span></p>
-    </div>
-    <div>
-      <button id="hardstartgame">Start Game</button>
-    </div>
-    <div>
-      <button id="hardplaynewgame">Play New Game</button>
-    </div>
-    <div>
-      <a class="menu" href="index.html">Go Back to Main Menu</a>
-    </div>
+  <h1 id="hardlevel">Memory Game: Hard</h1>
+  <h3>You have <span id="hardtimer">...</span> seconds left to guess...</h3>
+  <h1 id="hardgamemessage"></h1>
+  <div id="gridboxhard">
+    <img src="img/hard/back.png" id="h11" alt="">
+    <img src="img/hard/back.png" id="h12" alt="">
+    <img src="img/hard/back.png" id="h13" alt="">
+    <img src="img/hard/back.png" id="h14" alt="">
+    <img src="img/hard/back.png" id="h15" alt="">
+    <img src="img/hard/back.png" id="h16" alt="">
+    <img src="img/hard/back.png" id="h17" alt="">
+    <img src="img/hard/back.png" id="h18" alt="">
+    <img src="img/hard/back.png" id="h19" alt="">
+    <img src="img/hard/back.png" id="h110" alt="">
+    <img src="img/hard/back.png" id="h21" alt="">
+    <img src="img/hard/back.png" id="h22" alt="">
+    <img src="img/hard/back.png" id="h23" alt="">
+    <img src="img/hard/back.png" id="h24" alt="">
+    <img src="img/hard/back.png" id="h25" alt="">
+    <img src="img/hard/back.png" id="h26" alt="">
+    <img src="img/hard/back.png" id="h27" alt="">
+    <img src="img/hard/back.png" id="h28" alt="">
+    <img src="img/hard/back.png" id="h29" alt="">
+    <img src="img/hard/back.png" id="h210" alt="">
+    <img src="img/hard/back.png" id="h31" alt="">
+    <img src="img/hard/back.png" id="h32" alt="">
+    <img src="img/hard/back.png" id="h33" alt="">
+    <img src="img/hard/back.png" id="h34" alt="">
+    <img src="img/hard/back.png" id="h35" alt="">
+    <img src="img/hard/back.png" id="h36" alt="">
+    <img src="img/hard/back.png" id="h37" alt="">
+    <img src="img/hard/back.png" id="h38" alt="">
+    <img src="img/hard/back.png" id="h39" alt="">
+    <img src="img/hard/back.png" id="h310" alt="">
+    <img src="img/hard/back.png" id="h41" alt="">
+    <img src="img/hard/back.png" id="h42" alt="">
+    <img src="img/hard/back.png" id="h43" alt="">
+    <img src="img/hard/back.png" id="h44" alt="">
+    <img src="img/hard/back.png" id="h45" alt="">
+    <img src="img/hard/back.png" id="h46" alt="">
+    <img src="img/hard/back.png" id="h47" alt="">
+    <img src="img/hard/back.png" id="h48" alt="">
+    <img src="img/hard/back.png" id="h49" alt="">
+    <img src="img/hard/back.png" id="h410" alt="">
+    <img src="img/hard/back.png" id="h51" alt="">
+    <img src="img/hard/back.png" id="h52" alt="">
+    <img src="img/hard/back.png" id="h53" alt="">
+    <img src="img/hard/back.png" id="h54" alt="">
+    <img src="img/hard/back.png" id="h55" alt="">
+    <img src="img/hard/back.png" id="h56" alt="">
+    <img src="img/hard/back.png" id="h57" alt="">
+    <img src="img/hard/back.png" id="h58" alt="">
+    <img src="img/hard/back.png" id="h59" alt="">
+    <img src="img/hard/back.png" id="h510" alt="">
+  </div>
+  <div>
+    <button id="hardstartgame">Start Game</button>
+    <button id="hardplaynewgame">Reset Game</button>
+  </div>
+  <div class="scores">
+    <p class="level">Wins: <span id="hardwincounter">0</span></p>
+    <p class="level">Losses: <span id="hardlosscounter">0</span></p>
+  </div>
+  <div>
+    <a class="menu" href="index.html">Go Back to Main Menu</a>
+  </div>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
 </body>
 </html>

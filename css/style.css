@@ -73,7 +73,7 @@ img {
   border-radius: 0 0 10px 10px;
   width: 250px;
 }
-#scores {
+.scores {
   font-size: 25px;
   display: inline;
 }
@@ -97,8 +97,8 @@ img {
 */
 #gridboxeasy {
   background-color:  rgba(211, 209, 182, 0.5);
-  margin-left: 450px;
-  margin-right: 450px;
+  margin-left: 250px;
+  margin-right: 250px;
   border-radius: 15px;
   padding: 20px;
   display: grid;
@@ -192,4 +192,293 @@ img {
   border: 1px solid rgba(211, 209, 182, 1);
   border-radius: 15px;
 }
+
+/*
+#gridboxhard {
+  background-color:  rgba(211, 209, 182, 0.5);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#h11 {  
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h11, #h12, #h13, #h14, #h15, #h16, #h17, #h18, #h19, #h110, #h21, #h22, #h23, #h24, #h25, #h26, #h27, #h28, #h29, #h210, #h31, #h32, #h33, #h34, #h35, #h36, #h37, #h38, #h39, #h310, #h41, #h42, #h43, #h44, #h45, #h46, #h47, #h48, #h49, #h410, #h51, #h52, #h53, #h54, #h55, #h56, #h57, #h58, #h59, #h510 {
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+*/
+#gridboxhard {
+  background-color:  rgba(211, 209, 182, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+  grid-gap: 5px;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: 
+    "h11 h12 h13 h14 h15 h16 h17 h18 h19 h110"
+    "h21 h22 h23 h24 h25 h26 h27 h28 h29 h210"
+    "h31 h32 h33 h34 h35 h36 h37 h38 h39 h310"
+    "h41 h42 h43 h44 h45 h46 h47 h48 h49 h410"
+    "h51 h52 h53 h54 h55 h56 h57 h58 h59 h510";
+}
+#h11 {
+  grid-area: h11;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h12 {
+  grid-area: h12;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h13 {
+  grid-area: h13;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h14 {
+  grid-area: h14;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h15 {
+  grid-area: h15;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h16 {
+  grid-area: h16;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h17 {
+  grid-area: h17;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h18 {
+  grid-area: h18;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h19 {
+  grid-area: h19;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h110 {
+  grid-area: h110;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h21 {
+  grid-area: h21;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h22 {
+  grid-area: h22;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h23 {
+  grid-area: h23;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h24 {
+  grid-area: h24;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h25 {
+  grid-area: h25;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h26 {
+  grid-area: h26;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h27 {
+  grid-area: h27;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h28 {
+  grid-area: h28;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h29 {
+  grid-area: h29;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h210 {
+  grid-area: h210;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h31 {
+  grid-area: h31;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h32 {
+  grid-area: h32;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h33 {
+  grid-area: h33;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h34 {
+  grid-area: h34;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h35 {
+  grid-area: h35;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h36 {
+  grid-area: h36;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h37 {
+  grid-area: h37;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h38 {
+  grid-area: h38;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h39 {
+  grid-area: h39;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h310 {
+  grid-area: h310;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h41 {
+  grid-area: h41;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h42 {
+  grid-area: h42;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h43 {
+  grid-area: h43;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h44 {
+  grid-area: h44;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h45 {
+  grid-area: h45;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h46 {
+  grid-area: h46;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h47 {
+  grid-area: h47;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h48 {
+  grid-area: h48;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h49 {
+  grid-area: h49;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h410 {
+  grid-area: h410;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h51 {
+  grid-area: h51;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h52 {
+  grid-area: h52;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h53 {
+  grid-area: h53;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h54 {
+  grid-area: h54;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h55 {
+  grid-area: h55;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h56 {
+  grid-area: h56;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h57 {
+  grid-area: h57;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h58 {
+  grid-area: h58;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h59 {
+  grid-area: h59;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+#h510 {
+  grid-area: h510;
+  border: 1px solid rgba(211, 209, 182, 1);
+  border-radius: 15px;
+}
+
+
+
+
+
+
+
 
