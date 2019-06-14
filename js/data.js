@@ -5,18 +5,19 @@ var easyLoss = 0;
 var delayHandle = null;
 var timerHandle = null;
 var easyRemainingTime = 0;
+
 var gameOver = false;
-/*
+
 const HARD_STARTING_TIME = 300;
 var hardWin = 0;
 var hardLoss = 0;
 var hardRemainingTime = 0;
 var delayHandleHard = null;
 var timerHandleHard = null;
-*/
+
 
 var givenPairsEasy;
-//var givenPairsHard;
+var givenPairsHard;
 
 var currentBoardEasy = {
   e11: null,
@@ -37,7 +38,6 @@ var currentBoardEasy = {
   e44: null,
 }
 
-/*
 var currentBoardHard = {
   h11: null,
   h12: null,
@@ -90,7 +90,6 @@ var currentBoardHard = {
   h59: null,
   h510: null
 }
-*/
 
 var easyPicsGuessed = {
   e11: false,
@@ -110,7 +109,7 @@ var easyPicsGuessed = {
   e43: false,
   e44: false
 }
-/*
+
 var hardPicsGuessed = {
   h11: false,
   h12: false,
@@ -163,19 +162,16 @@ var hardPicsGuessed = {
   h59: false,
   h510: false
 }
-*/
 
 var openedPicsEasy =[];
 var guessedPicsEasy = [];
 var guessesLength = 0;
 var unpairedGuesses = [];
 
-/*
 var openedPicsHard = [];
 var guessedPicsHard = [];
 var guessesLengthHard = 0;
 var unpairedGuessesHard = [];
-*/
 
 //DOM References:
 var easyTimerText;
@@ -184,13 +180,12 @@ var easyStartGameBttn;
 var easyPlayNewGameBttn;
 var gridBoxEasy;
 
-/*
 var hardTimerText;
 var hardGameMessage;
 var hardStartGameBttn;
 var hardPlayNewGameBttn;
 var gridBoxHard;
-*/
+
 
 
   
