@@ -1,5 +1,5 @@
 
-function shuffle(array) {
+function shuffleEasy(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) {                               // While there remain elements to shuffle...
     randomIndex = Math.floor(Math.random() * currentIndex);  // Pick a remaining element...
@@ -179,7 +179,7 @@ function startGameEasy() {
     }
   ];
   
-  shuffle(givenPairsEasy);
+  shuffleEasy(givenPairsEasy);
   
   for (let elem1 in currentBoardEasy) {
     currentBoardEasy[elem1] = null;

@@ -1,6 +1,6 @@
 //shuffle the array
 //Fisher-Yates (aka Knuth) Shuffle from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffle(array) {
+function shuffleHard(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) { // While there remain elements to shuffle...
     randomIndex = Math.floor(Math.random() * currentIndex);  // Pick a remaining element...
@@ -376,7 +376,7 @@ function startGameHard() {
   ];
   
   
-  shuffle(givenPairsHard);
+  shuffleHard(givenPairsHard);
   
   for (let elem1 in currentBoardHard) {
     currentBoardHard[elem1] = null;

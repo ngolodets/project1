@@ -77,6 +77,9 @@ img {
   font-size: 25px;
   display: inline;
 }
+.buttons {
+  margin: 0 auto;
+}
 
 #gridboxeasy {
   background-color:  rgba(211, 209, 182, 0.5);
@@ -177,14 +180,20 @@ img {
 }
 
 #gridboxhard {
-  background-color:  rgba(211, 209, 182, 0.5);
-  border-radius: 15px;
-  padding: 20px;
+  /*background-color:  rgba(211, 209, 182, 0.5);*/
+  /*border-radius: 15px;*/
+  /*padding: 1px 0 0 0;*/
+  /*white-space: nowrap;*/
+  border: 0;
+  padding-bottom: 0;
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 80%;
   display: grid;
   justify-content: center;
   grid-gap: 5px;
-  grid-template-rows: repeat(10, 1fr);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-areas: 
     "h11 h12 h13 h14 h15 h16 h17 h18 h19 h110"
     "h21 h22 h23 h24 h25 h26 h27 h28 h29 h210"
