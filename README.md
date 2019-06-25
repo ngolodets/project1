@@ -19,8 +19,11 @@ Moreover, there is a link at the bottom of the game page that takes the user to 
 The screen shot of the main page is:
 ![image](img/mainpage.png)
 
-The screen shot of the game page is:
+The screen shot of the easy version of the game page is:
 ![image](img/gamepage.png)]
+
+The screen shot of the hard version of the game page is:
+![image](img/Hard version screenshot.png)
 
 ## Development journal:
 At the beginning of the project, my main concern consisted of figuring out a way to randomize the pairs of pictures.  For that purpose, I used Fisher-Yates (or Knuth) Shuffle that I found on stackoverflow.
