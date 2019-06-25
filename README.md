@@ -41,11 +41,14 @@ Clicking a Start Game button initiates startGame() function that resets the time
 Clicking a Game Reset button clears win/loss counters and delay and timer handles, in addition to running the startGame() function.
 
 ## Remaining issues:
-Originally, I was playing on creating two gameboards -- easy and hard.  Both boards were created in HTML and styled in CSS.  However, the CSS for the "hard" version is a little off -- the div containg the grid expands too much, and the grid gaps on the gameboard are inconsistent.  Shortly, it looks off.
+<s>Originally, I was playing on creating two gameboards -- easy and hard.  Both boards were created in HTML and styled in CSS.  However, the CSS for the "hard" version is a little off -- the div containg the grid expands too much, and the grid gaps on the gameboard are inconsistent.  Shortly, it looks off.</s>
 
-The main issue with the versions though is that my app either only runs "easy" version or "hard" version, but not both!  Other than that, the game works.
+<s>The main issue with the versions though is that my app either only runs "easy" version or "hard" version, but not both!  Other than that, the game works.</s>
+
+Both gameboards are functional - the game logic was fixed, and the CSS was adjusted.
 
 Additionally, I haven't worked in a mobile-friendly version into my game.
+
 
 ## Features to add/wishlist:
 I would like to fix the issue of not being able to run both versions of the game.  Also, I want to create a mobilie-friendly version.  Moreover, I want to add a pop-out box versus a game message that informs the user of their win/loss, total wins/losses, time reamining, etc. and maybe add the "best time" tracker.  I would also like to either blur out or white out the guessed tiles during the gameplay or maybe add some win/lose sounds or some type of animation.
