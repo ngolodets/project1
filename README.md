@@ -51,4 +51,5 @@ Additionally, I haven't worked in a mobile-friendly version into my game.
 
 
 ## Features to add/wishlist:
-I would like to fix the issue of not being able to run both versions of the game.  Also, I want to create a mobilie-friendly version.  Moreover, I want to add a pop-out box versus a game message that informs the user of their win/loss, total wins/losses, time reamining, etc. and maybe add the "best time" tracker.  I would also like to either blur out or white out the guessed tiles during the gameplay or maybe add some win/lose sounds or some type of animation.
+<s>I would like to fix the issue of not being able to run both versions of the game.</s> -- Done! 
+Also, I want to create a mobilie-friendly version.  Moreover, I want to add a pop-out box versus a game message that informs the user of their win/loss, total wins/losses, time reamining, etc. and maybe add the "best time" tracker.  I would also like to either blur out or white out the guessed tiles during the gameplay or maybe add some win/lose sounds or some type of animation.
