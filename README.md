@@ -1,7 +1,7 @@
 # project1 -- Memory Game
 The aim of the memory game is to match all the pairs of pictures on the board within a given interval of time.  If the player matches all the tiles/pictures, they win.  If the player runs out of time and does not uncover all the tiles on the board, they loose.
 
-Play online: [link]( https://ngolodets.github.io/project1/.)
+Play online: [https://ngolodets.github.io/project1/]( https://ngolodets.github.io/project1/.)
 
 ## Technologies used:
 This game was created using HTML, CSS and JavaScript.
@@ -50,9 +50,11 @@ Clicking a Game Reset button clears win/loss counters and delay and timer handle
 
 Both gameboards are functional - the game logic was fixed, and the CSS was adjusted.
 
-Additionally, I haven't worked in a mobile-friendly version into my game.
+<s>Additionally, I haven't worked in a mobile-friendly version into my game.</s>
+
+The game is mobile-frindly for both easy and hard modes.
 
 
 ## Features to add/wishlist:
 <s>I would like to fix the issue of not being able to run both versions of the game.</s> -- Done! 
-Also, I want to create a mobilie-friendly version.  Moreover, I want to add a pop-out box versus a game message that informs the user of their win/loss, total wins/losses, time reamining, etc. and maybe add the "best time" tracker.  I would also like to either blur out or white out the guessed tiles during the gameplay or maybe add some win/lose sounds or some type of animation.
+<s>Also, I want to create a mobilie-friendly version.</s> -- Done!  Moreover, I want to add a pop-out box versus a game message that informs the user of their win/loss, total wins/losses, time reamining, etc. and maybe add the "best time" tracker.  I would also like to either blur out or white out the guessed tiles during the gameplay or maybe add some win/lose sounds or some type of animation.
