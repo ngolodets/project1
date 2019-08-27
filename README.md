@@ -8,7 +8,7 @@ This game was created using HTML, CSS and JavaScript.
 
 ## Planning details:
 ### Wireframe:
-![image](img/0.jpg)
+![image](img/0.jpg =250x250)
 
 I wanted to create a game board consisting of a 4x4 grid of tiles.  In addition to the board, I wanted the game to have a countdown timer, a win/lose message, and two separate win/lose counters.  The timer, the message, and the counters are DOM elements.  The rest of the page elements, including the tile grid are hard-coded into the HTML.
 
