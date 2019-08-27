@@ -12,6 +12,9 @@ body, html {
   background-image: url("https://www.washingtonpost.com/resizer/LaN2To2gnlQW-XkqMODPZanrZVk=/957x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/QH2XL2QWVZEJND5Z6OSSQXYZJM.PNG");
   background-size: cover;
   background-attachment: fixed;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh;
 }
 #title {
   font-family: 'Lobster', cursive;
@@ -83,8 +86,8 @@ img {
 
 #gridboxeasy {
   background-color:  rgba(211, 209, 182, 0.5);
-  margin-left: 250px;
-  margin-right: 250px;
+  width: 90vw;
+  margin: 0 auto;
   border-radius: 15px;
   padding: 20px;
   display: grid;
@@ -179,11 +182,54 @@ img {
   border-radius: 15px;
 }
 
+@media screen and (max-width: 600px) {
+  #gridboxeasy {
+    grid-gap: 1px;
+    grid-template-rows: 75px 75px 75px 75px;
+    grid-template-columns: 75px 75px 75px 75px;
+    grid-template-areas:
+      "e11 e12 e13 e14"
+      "e21 e22 e23 e24"
+      "e31 e32 e33 e34"
+      "e41 e42 e43 e44";    
+  }
+  .img {
+    height: 75px;
+    width: 75px;
+  }
+  #easybackground, .scores, #easystartgame, #easyplaynewgame, #hardstartgame, #hardplaynewgame, #hardbackground, .menu, #hardtimer, h1, h3 {
+    font-size: 10px;
+  }
+  #easystartgame, #easyplaynewgame, #easywincounter, #easylosscounter, #hardstartgame, #hardplaynewgame {
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  #gridboxhard {
+    /* grid-gap: 0.1px; */
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas: 
+      "h11 h12 h13 h14 h15 h16 h17 h18 h19 h110"
+      "h21 h22 h23 h24 h25 h26 h27 h28 h29 h210"
+      "h31 h32 h33 h34 h35 h36 h37 h38 h39 h310"
+      "h41 h42 h43 h44 h45 h46 h47 h48 h49 h410"
+      "h51 h52 h53 h54 h55 h56 h57 h58 h59 h510";
+  }
+  .imgh {
+    width: 40px;
+    height: 40px;
+  }
+  .buttons, .score, .menu {
+    margin: 0 auto;
+  } 
+  #description, #choselevel, #easy, #hard {
+    font-size: 12px;
+  }
+}
+
+
+
 #gridboxhard {
-  /*background-color:  rgba(211, 209, 182, 0.5);*/
-  /*border-radius: 15px;*/
-  /*padding: 1px 0 0 0;*/
-  /*white-space: nowrap;*/
   border: 0;
   padding-bottom: 0;
   margin: 0 auto;
